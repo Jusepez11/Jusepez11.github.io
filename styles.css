@@ -1,4 +1,27 @@
-body, button{
+body, button, .button{
     background-color: #303036;
     color: #ffffff;
+    font-family: sans-serif;
+    text-align: center;
+}
+
+
+form {
+    width: 60vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding-bottom: 2em;
+  }
+
+.me{
+text-align: left;
+}
+img {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+a{
+    color: #ff00d9;
 }
