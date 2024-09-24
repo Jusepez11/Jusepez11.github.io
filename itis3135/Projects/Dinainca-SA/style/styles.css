@@ -1,0 +1,53 @@
+body, button, .button{
+    background-color: #303036;
+    color: #ffffff;
+    font-family: sans-serif;
+    justify-content: center;
+    text-align: center;
+    width: 80vw;
+    height: 100vh;
+    margin: 0 auto;
+    padding-bottom: 2em;
+}
+h1,h2,h3{
+    font-weight: bold;
+}
+h2, h3, p{
+    text-align: left !important;
+    margin: 0 auto;
+}
+.titleish{
+    margin-top: 10px;
+}
+
+legend{
+    text-align: left
+}
+form {
+    width: 60vw;
+    max-width: 500px;
+    min-width: 300px;
+    margin: 0 auto;
+    padding-bottom: 2em;
+  }
+
+img {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
+fieldset{
+    display: inline-block;
+}
+.company-logo{
+    width: 20%;
+    padding: 30px;
+    /*transform: rotate(-90deg);*/
+}
+.products{
+    text-align: left;
+}
+
+a{
+    color: #ff00d9;
+}
