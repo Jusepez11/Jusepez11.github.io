@@ -34,3 +34,6 @@ a{
 .left{
 text-align: left;
 }
+fieldset{
+    display: inline-block;
+}
