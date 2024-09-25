@@ -1,47 +1,22 @@
 <!DOCTYPE html>
-<html lang="en"><head>
-<meta http-equiv="content-type" content="text/html; charset=UTF-8"><script src="Main%20Page_files/accumulator.js" async="" class="accumulusDependency" crossorigin="anonymous"></script>
+<html lang="en">
+    <head>
         <meta charset="utf-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">        
         <title>Main Page</title>
         <link rel="icon" href="../logo.ico">
         <link rel="stylesheet" href="../styles.css">
-        <script src="Main%20Page_files/4d0fe3.js" crossorigin="anonymous"></script>
-    <link rel="stylesheet" href="Main%20Page_files/accumulus.css" crossorigin="anonymous" class="accumulusDependency"><script src="Main%20Page_files/jab.min.js" async="" crossorigin="anonymous" class="accumulusDependency"></script><script src="Main%20Page_files/viewer.js" async="" crossorigin="anonymous" class="accumulusDependency"></script></head>
-    <body>
-        <h1>Juan Sebastian Lopez-Gallardo || 3135 course page</h1>
-        <h4>This is my 3135 Coursepage</h4>
-        <section>
-            <a href="https://webpages.charlotte.edu/jlopezga/itis3135/index.html">
-		<label for="home">
-                <input class="button" id="home" type="button" value="Home">
-		</label>
-            </a>
-            <a href="https://webpages.charlotte.edu/jlopezga/itis3135/introduction.html">
-		<label for="intro">
-                <input class="button" id="intro" type="button" value="Introduction">		
-		</label>
-            </a>
-            <a href="https://webpages.charlotte.edu/jlopezga/itis3135/Contract.htm">
-		<label for="contract">
-                <input class="button" id="contract" type="button" value="Contract">
-		</label>
-            </a>
-        </section>
-
-        <section>
-            <fieldset>
-                <legend>My Links</legend>
-                <span><a href="https://webpages.charlotte.edu/jlopezga/">Webspace</a> | <a href="https://github.com/Jusepez11">Github</a> | <a href="https://jusepez11.github.io/">Github Pages</a> | <a href="https://github.com/jusepez11/jusepez11.github.io">Github Course Page</a> | <a href="https://www.freecodecamp.org/jusepez11">FreeCodeCamp</a> | <a href="https://www.codecademy.com/profiles/Jusepez11">Codecademy</a></span>
-            </fieldset>
-        </section>
-
-        <a href="https://webpages.charlotte.edu/jlopezga/index.htm">'
-            <label for="return">
-            <input id="return" class="button" type="button" value="Back">
-        </label>
-        </a>
-    
-    <footer class="footer">
-        <p>Page built by <span class="company"><a href="Projects/Dinainca-SA/index.html">Dinainca S.A.</a></span> © 2024</p>
+        <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>        
+    </head>
+    <header>
+        <div data-include="Components/header.html"></div>
+    </header>
+    <footer class="footer">        
+        <div data-include="Components/footer.html"></div>
     </footer>
+    <script>
+        document.getElementById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
+        document.getElementById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator-validator?uri=" + location.href);
+    </script>
+    <script src="scripts/HTMLInclude.min.js"></script>
+</html>
