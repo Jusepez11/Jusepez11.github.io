@@ -1,0 +1,15 @@
+body { 
+    color: black; 
+}
+h1{
+    font-family: 'Times New Roman', Times, serif; 
+}
+h2 { 
+    font-family: Papyrus; 
+}
+p { 
+    font-family: Comic Sans MS; 
+}
+.egg-in-bowl{
+    text-align: right;
+}
