@@ -8,6 +8,9 @@
         <link rel="stylesheet" href="style/styles.css">
         <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     </head>
+    <header>
+        <div data-include="../../Components/header.html"></div>
+    </header>
     <body>
         <h1 class="titleish">Dinainca S.A.</h1>
         <img class="company-logo" alt="Company Logo" src="../images/just-badger.png" />
@@ -57,6 +60,12 @@
                 593 Guayaquil Rd, Salt Lake City, UT 090307<br>
                 ©2024 Dinainca SA
             </p>
-        </fieldset>
+        </fieldset>       
+            <div data-include="../../Components/footer.html"></div>
     </footer>
+    <script>
+        document.getElementById("validation_link_html").setAttribute("href", "https://validator.w3.org/check?uri=" + location.href);
+        document.getElementById("validation_link_css").setAttribute("href", "https://jigsaw.w3.org/css-validator-validator?uri=" + location.href);
+    </script>
+    <script src="../../scripts/HTMLInclude.min.js"></script>
 </html>
