@@ -5,6 +5,16 @@ body, button, .button{
     text-align: center;
 }
 
+ul, ol{
+    width: 50%;
+    margin: 0 auto;
+    text-align: left;
+ }
+ p{
+
+    width: 50%;
+    margin: 0 auto;
+ }
 
 form {
     width: 60vw;
@@ -23,7 +33,10 @@ img {
     margin: 0 auto;
 }
 a{
-    color: #ff00d9;
+    color: #17b6ff;
+}
+a:hover{
+    color:#60efff;
 }
 .sales{
     width: 12%;
@@ -36,4 +49,34 @@ text-align: left;
 }
 fieldset{
     display: inline-block;
+}
+.CRAP{
+    text-decoration: none;
+    color: antiquewhites;
+}
+
+table {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+th {
+    background-color: #1c1c1c;
+    padding: 5px;
+    color: white;
+}
+td {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
+tr:nth-child(even) {
+    background-color: #ffffff;
+    color: black;
+}
+
+tr:nth-child(odd) {
+    background-color: #414141;
+}
+th[class="Total"] {
+    text-align: left;
 }
