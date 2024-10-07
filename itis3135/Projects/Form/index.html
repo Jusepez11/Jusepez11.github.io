@@ -5,7 +5,7 @@
         <title>Form</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">  
         <link rel="icon" href="/logo.ico">
-        <link rel="stylesheet" href="/styles.">
+        <link rel="stylesheet" href="styles.css">
         <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     </head>
     <header>
@@ -13,6 +13,88 @@
     </header>
     <body>
         <h1>Form</h1>
+        <form>
+            <fieldset class="service-form">
+                <section class="cx-info">
+                <label id="contact" for="contact"><b>Contact Information</b></label><br>
+                
+                <label for="name">Name:</label>
+                <br>
+                <input type="text" id="name" name="name" placeholder="Enter your name" required><br>
+                
+                <label for="phone">Phone Number:</label>
+                <br>
+                <input type="range" min="1111111111" max="9999999999" value="1111111111" class="slider" id="phoneSlider" name="phone"><br>
+                <input type="text" id="phoneInput" name="phone" placeholder="Enter your phone number" required><br>
+                <script>
+                  const phoneSlider = document.getElementById('phoneSlider');
+                  const phoneInput = document.getElementById('phoneInput');
+                
+                  // Function to format phone number as (xxx) xxx-xxxx
+                  function formatPhoneNumber(phoneNumber) {
+                    const cleaned = ('' + phoneNumber).replace(/\D/g, '');
+                    const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+                    if (match) {
+                      return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+                    }
+                    return phoneNumber;
+                  }
+                
+                  // Update text box when the slider moves
+                  phoneSlider.oninput = function() {
+                    phoneInput.value = formatPhoneNumber(this.value);
+                  }
+                
+                  // Update slider when the text box changes
+                  phoneInput.oninput = function() {
+                    const unformatted = phoneInput.value.replace(/\D/g, ''); // Remove non-numeric characters
+                    phoneSlider.value = unformatted;
+                    phoneInput.value = formatPhoneNumber(unformatted);
+                  }
+                </script>
+
+                <label for="email">Email</label><br>
+                <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                <br><br>
+                </section>
+
+                <section class="services">
+                    <label class="service" for="service" name="service"><b>What service are you interested on?</b></label><br>
+                    <input type="checkbox" id="shipping" name="service" value="shipping">Logistics and transportation services<br>
+                    <input type="checkbox" id="inventory" name="service" value="inventory">Warehousing solutions<br>
+                    <input type="checkbox" id="cx-service" name="service" value="cx-service">Customer service support<br>
+                    <input type="checkbox" id="online-orders" name="service" value="online-orders">Online order processing<br>
+                    <br>
+                </section>
+
+                <section>
+                    <label><b>Preferred Contact Method</b></label><br>
+                    <input type="radio" id="contact-email" name="contact-method" value="Email" checked="checked" required>
+                    <label for="contact-email">Email</label><br>
+                    <input type="radio" id="contact-phone" name="contact-method" value="Phone">
+                    <label for="contact-phone">Phone</label>
+                    <br><br>
+                </section>
+
+                <section>
+                    <label for="ad">How did you hear about us?</label>
+                    <select id="heard" name="heard"><br>
+                        <option value="select_service">Select an option</option>
+                        <option value="facebook">Facebook</option>
+                        <option value="instagram">Instagram</option>
+                        <option value="twitter">Twitter</option>
+                        <option value="linkedin">LinkedIn</option>
+                        <option value="youtube">YouTube</option>
+                        <option value="other">Other</option>
+                    </select>
+                    <br><br>
+                </section>
+                <section class="button">
+                    <button type="reset" id="button-reset">Reset</button>
+                    <button type="submit" id="button-submit">Submit</button>
+                </section>
+            </fieldset>            
+        </form>
     </body>
     <footer class="footer">        
         <div data-include="/jlopezga/itis3135/Components/footer.html"></div>
