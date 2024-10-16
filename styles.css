@@ -1,3 +1,17 @@
+html{
+  height: 100%;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+    flex: 1 0 auto;
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+    margin-bottom: 40px;
+}
+
 body, button, .button{
     background-color: #303036;
     color: #ffffff;
@@ -9,12 +23,13 @@ ul, ol{
     width: 50%;
     margin: 0 auto;
     text-align: left;
- }
- p{
+}
+
+p{
 
     width: 50%;
     margin: 0 auto;
- }
+}
 
 form {
     width: 60vw;
@@ -22,34 +37,36 @@ form {
     min-width: 300px;
     margin: 0 auto;
     padding-bottom: 2em;
-  }
+}
 
 .me{
 text-align: left;
 }
-img {
-    display: block;
-    width: 50%;
-    margin: 0 auto;
-}
+
 a{
     color: #17b6ff;
 }
+
 a:hover{
     color:#60efff;
 }
+
 .sales{
     width: 12%;
 }
+
 .code{
     width: 30%;
 }
+
 .left{
 text-align: left;
 }
+
 fieldset{
     display: inline-block;
 }
+
 .CRAP{
     text-decoration: none;
     color: antiquewhites;
@@ -60,15 +77,18 @@ table {
     margin: 0 auto;
     text-align: center;
 }
+
 th {
     background-color: #1c1c1c;
     padding: 5px;
     color: white;
 }
+
 td {
     border: 1px solid #ddd;
     padding: 5px;
 }
+
 tr:nth-child(even) {
     background-color: #ffffff;
     color: black;
@@ -77,6 +97,7 @@ tr:nth-child(even) {
 tr:nth-child(odd) {
     background-color: #414141;
 }
+
 th[class="Total"] {
     text-align: left;
 }
@@ -90,24 +111,86 @@ fieldset[class="service-form"]{
 fieldset[class="service-form"] legend{
     text-align: left;
 }
+
 form fieldset{
     max-width: 900px;
     min-width: 300px;
 }
+
 label {
     margin-top: 1px; 
     margin-bottom: 0px;
 }
-
+img:not(.validation) {
+    display: block;
+    width: 50%;
+    margin: 0 auto;
+}
 input {
     text-align: left;
     margin-bottom: 10px; 
     color: black;
 }
+
 input[type="checkbox"]{
     text-align: left;
     margin-left: 0;
 }
+
 input[type="range"]{
     width: 68%;
+}
+
+.counter{
+    width: 150px;
+    height: 50px;
+}
+
+.topnav {
+overflow: hidden;
+background-color: #1f1f1f;
+}
+
+.topnav a {
+color: #f2f2f2;
+padding: 14px 16px;
+text-decoration: none;
+text-align: center;
+font-size: 17px;
+display: inline-block;
+}
+
+.topnav a:hover {
+background-color: #ddd;
+color: black;
+}
+
+footer {
+    flex-shrink: 0;
+    position: relative;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: #111;
+    width: 100%;
+    margin-top: auto;
+    padding-top: 15px;
+    padding-bottom: 10px;
+    color: #fff;
+}
+.footer-content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 10px; /* This adds space between footer elements */
+}
+.footer-content .validation-container {
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Space between images */
+}
+
+.validation {
+    width: 88px;
+    height: 31px;
 }

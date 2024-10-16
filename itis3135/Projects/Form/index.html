@@ -4,8 +4,8 @@
         <meta charset="utf-8">
         <title>Form</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0">  
-        <link rel="icon" href="/logo.ico">
-        <link rel="stylesheet" href="styles.css">
+        <link rel="icon" href="/jlopezga/logo.ico">
+        <link rel="stylesheet" href="/jlopezga/styles.css">
         <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
     </head>
     <header>
@@ -24,11 +24,11 @@
                 
                 <label for="phone">Phone Number:</label>
                 <br>
-                <input type="range" min="1111111111" max="9999999999" value="1111111111" class="slider" id="phoneSlider" name="phone"><br>
-                <input type="text" id="phoneInput" name="phone" placeholder="Enter your phone number" required><br>
+                <input type="range" min="1111111111" max="9999999999" value="1111111111" class="slider" id="phone-slider" name="phone"><br>
+                <input type="text" id="phone-input" name="phone" placeholder="Enter your phone number" required><br>
                 <script>
-                  const phoneSlider = document.getElementById('phoneSlider');
-                  const phoneInput = document.getElementById('phoneInput');
+                  const phoneSlider = document.getElementById('phone-slider');
+                  const phoneInput = document.getElementById('phone-input');
                 
                   // Function to format phone number as (xxx) xxx-xxxx
                   function formatPhoneNumber(phoneNumber) {
@@ -43,14 +43,14 @@
                   // Update text box when the slider moves
                   phoneSlider.oninput = function() {
                     phoneInput.value = formatPhoneNumber(this.value);
-                  }
+                  };
                 
                   // Update slider when the text box changes
                   phoneInput.oninput = function() {
                     const unformatted = phoneInput.value.replace(/\D/g, ''); // Remove non-numeric characters
                     phoneSlider.value = unformatted;
                     phoneInput.value = formatPhoneNumber(unformatted);
-                  }
+                  };
                 </script>
 
                 <label for="email">Email</label><br>
