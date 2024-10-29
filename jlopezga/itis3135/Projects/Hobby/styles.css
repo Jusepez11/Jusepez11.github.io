@@ -124,3 +124,29 @@ footer {
 #me{
     width: 50%;
 }
+
+table {
+    width: 100%;
+    margin: 0 auto;
+    text-align: center;
+}
+tr:nth-child(even) {
+    background-color: #ffffff;
+    color: black;
+}
+
+tr:nth-child(odd) {
+    background-color: #FAC9B8;
+    color: black;
+}
+
+th {
+    background-color: #DB8A74;
+    padding: 5px;
+    color: white;
+}
+
+td {
+    border: 1px solid #ddd;
+    padding: 5px;
+}
