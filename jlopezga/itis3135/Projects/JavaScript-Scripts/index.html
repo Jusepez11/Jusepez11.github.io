@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="utf-8">
+        <title>JavaScript</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
+        <link rel="icon" href="/jlopezga/logo.ico">
+        <link rel="stylesheet" href="/jlopezga/styles.css">
+        <script src="https://lint.page/kit/4d0fe3.js" crossorigin="anonymous"></script>
+    </head>
+    <header>
+        <div data-include="/jlopezga/itis3135/Components/header.html"></div>
+    </header>
+    <body>
+        <main>
+            <h2 id="egg">First Scripts Page</h2>
+            <fieldset class="form">
+                    <form>
+                        <label for="name">Enter your name:</label>
+                        <input type="text" id="name">
+                        <br>
+                        <label for="mood">How are you feeling?</label>
+                        <input type="text" id="mood">
+                        <br>
+                        <label for="number">Enter your favorite number (0-11):</label>
+                        <input type="number" id="number" min="0" max="11" step="1">
+                        <button type="button" onclick="submitText()">Submit</button>
+                        <button type="button" onclick="showPolygon()">Show Polygon</button>
+                    </form>
+
+                    <p id="text" class="hidden"><strong>Testing 1</strong></p>
+                    <div id="polygon" class="hidden"><p></p></div>
+
+                    <button type="button" onclick="taxEvasion()">Tax Evasion Trick</button>
+                    <button type="button" onclick="tip()">Tip</button>
+                    <button type="button" onclick="funFact()">Fun Fact</button>
+                    <button type="button" onclick="randomQuote()">Random Quote</button>
+                    <button type="button" onclick="easterEgg()">Easter Egg</button>
+
+                    <div id="buttons" class="hidden"></div>
+            </fieldset>
+        </main>
+    </body>
+    <footer class="footer">        
+        <div data-include="/jlopezga/itis3135/Components/footer.html"></div>
+    </footer>
+    
+    <script src="script.js"></script>
+    <script src="/jlopezga/itis3135/scripts/HTMLInclude.min.js"></script>
+</html>
