@@ -9,20 +9,20 @@ const polygon = {
     8 : "octagon",
     9 : "enneagon",
     10 : "decagon",
-    11: "hendecagon",
+    11: "hendecagon"
 };
 
 function taxEvasion(){
     const textElement = document.getElementById("buttons");
     textElement.classList.remove("hidden");
-    textElement.innerHTML = "<p>Unfortunately the IRS took down this message.</p>"
+    textElement.innerHTML = "<p>Unfortunately the IRS took down this message.</p>";
     
 }
 
 function tip(){
     const textElement = document.getElementById("buttons");
     textElement.classList.remove("hidden");
-    textElement.innerHTML = "<p>Don't walk in front of a train.</p>"
+    textElement.innerHTML = "<p>Don't walk in front of a train.</p>";
 
 }
 
@@ -36,7 +36,7 @@ function funFact(){
 function randomQuote(){
     const textElement = document.getElementById("buttons");
     textElement.classList.remove("hidden");
-    textElement.innerHTML = "<blockquote>&ldquo;Being a good example is the best form of service.&rdquo; &mdash; <footer>Sathya Sai Baba</footer></blockquote>";
+    textElement.innerHTML = "<p>Being a good example is the best form of service.</p>";
 
 }
 
@@ -49,31 +49,28 @@ function easterEgg(){
 
 }
 
-function submitText(){
+function submitText() {
     const textElement = document.getElementById("text");
-    const name = document.getElementById("name");
-    const mood = document.getElementById("mood");
+    const name = document.getElementById("name").value; // Add .value to get the input value
+    const mood = document.getElementById("mood").value; // Add .value to get the input value
 
-    if (name && mood){
+    if (name && mood) {
         textElement.classList.remove("hidden");
         textElement.innerHTML = `<p>The Dinainca National Distributor welcomes you, ${name}! We're glad you are doing ${mood}!</p>`;
-    }
-    else{
+    } else {
         textElement.innerHTML = "<p>Please enter a name or mood based of what's missing.</p>";
     }
 }
 
-function showPolygon(){
-    const textElement = document.getElementById("text");
-    textElement.classList.remove("hidden");
-
-    const number = document.getElementById("polygon");    
+function showPolygon() {
+    const polygonElement = document.getElementById("polygon");
+    polygonElement.classList.remove("hidden");
     
-    if (polygon[numberInput]) {
-        outputElement.innerHTML = `<p>Your polygon is a ${polygon[number]}!</p>`;
+    const numberInput = document.getElementById("number").value; // Add .value to get the input value
+    
+    if (numberInput >= 1 && numberInput <= 11) {
+        polygonElement.innerHTML = `<p>Your polygon is a ${polygon[numberInput]}!</p>`;
     } else {
-        outputElement.innerHTML = "<p>Please enter a number between 1 and 11.</p>";
+        polygonElement.innerHTML = "<p>Please enter a number between 1 and 11.</p>";
     }
-
 }
-
