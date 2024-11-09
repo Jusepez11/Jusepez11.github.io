@@ -117,13 +117,13 @@ th[class="Total"] {
     text-align: left;
 }
 
-fieldset[class="service-form"] {
+fieldset[class="form"] {
     border: 0;
     border-radius: 5px;
     background-color: #777783;
 }
 
-fieldset[class="service-form"] legend {
+fieldset[class="form"] legend {
     text-align: left;
 }
 
@@ -254,6 +254,7 @@ footer {
     }
     
     form {
+        padding-top: 200px;
         width: 90%;
     }
 }
@@ -261,4 +262,8 @@ footer {
 .reach-us-div{
     padding-top: 20px;
     padding-bottom: 20px;
+}
+
+.hidden{
+    display: none;
 }
