@@ -272,3 +272,23 @@ footer {
     display: block;
     padding-bottom: auto;
 }
+
+fieldset[id="byo-form"] label{
+    display: block;
+}
+
+fieldset[id="byo-form"] label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.4;
+}
+
+fieldset[id="byo-form"] input[type="checkbox"] {
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+fieldset *{
+    padding-bottom: 1%;
+}

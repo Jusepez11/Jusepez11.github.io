@@ -14,7 +14,70 @@
     <body>
         <main>
             <h2>BYO Site</h2>
-            
+            <form>
+                <fieldset id="byo-form" class="form">
+                    <section>
+                        <label for="name">Name:</label>
+                        <input type="text" id="name" required placeholder="Enter your name">
+                    </section>
+                
+
+                        <label for="mascot">Mascot:</label>
+                        <input type="text" id="mascot" required placeholder="Enter your mascot">
+                    
+                        
+                        <label for="image">Upload an image (PNG/JPG):</label>
+                        <input type="file" id="image" required accept=".png, .jpg, .jpeg">
+                    
+                        <label for="image-caption">Image Caption:</label>
+                        <input type="text" id="imag-caption" required placeholder="Image Caption">
+                    
+                        <label for="personal-background">Personal Background:</label>
+                        <textarea rows="5" cols="45" type="text" id="personal-background" required placeholder="Personal Background"></textarea>
+                    
+                        <label for="professional-background">Professional Background:</label>
+                        <textarea rows="5" cols="45" type="text" id="professional-background" required placeholder="Professional Background"></textarea>
+                    
+                        <label for="academic-background">Academic Background:</label>
+                        <textarea rows="5" cols="45" type="text" id="academic-background" required placeholder="Academic Background"></textarea>
+                    
+                        <label for="web-dev-background">Background in Web Development:</label>
+                        <textarea rows="5" cols="45" type="text" id="web-dev-background" required placeholder="Web Development Background"></textarea>
+                    
+                    <label for="platform">Primary Computer Platform:</label>
+                    <select id="platform" required>
+                        <option value="Windows">Windows</option>
+                        <option value="Mac">Mac</option>
+                        <option value="Linux">Linux</option>
+                    </select>
+                
+                    <br>
+
+                    <fieldset>
+                        <legend>Courses Currently Taking</legend>
+                        <div id="courses"></div>
+                        <button type="button" id="add-course-button">Add Course</button>
+                    </fieldset>
+                
+                    <label for="funny-thing">Funny thing?</label>
+                    <input type="text" id="funny-thing" placeholder="Share something funny!">
+                
+                    <label for="anything-else">Anything else?</label>
+                    <textarea id="anything-else" placeholder="Add any additional comments..."></textarea>
+                
+                    <label>
+                        <fieldset>
+                            <input type="checkbox" id="agreement" required>
+                            I understand that what is on this page is not password protected and I will not put anything here that I don’t want publicly available.
+                        </fieldset>
+                    </label>
+
+                    <div>
+                        <input type="submit" value="Submit">
+                        <input type="reset" value="Reset">
+                    </div>
+                </fieldset>
+            </form>
         </main>
     </body>
     <footer class="footer">        
