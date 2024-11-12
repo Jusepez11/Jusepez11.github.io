@@ -16,15 +16,11 @@
             <h2>BYO Site</h2>
             <form>
                 <fieldset id="byo-form" class="form">
-                    <section>
                         <label for="name">Name:</label>
-                        <input type="text" id="name" required placeholder="Enter your name">
-                    </section>
-                
+                        <input type="text" id="name" required placeholder="Enter your name">                
 
                         <label for="mascot">Mascot:</label>
                         <input type="text" id="mascot" required placeholder="Enter your mascot">
-                    
                         
                         <label for="image">Upload an image (PNG/JPG):</label>
                         <input type="file" id="image" required accept=".png, .jpg, .jpeg">
@@ -51,12 +47,12 @@
                         <option value="Linux">Linux</option>
                     </select>
                 
-                    <br>
+                    <br><br>
 
                     <fieldset>
                         <legend>Courses Currently Taking</legend>
                         <div id="courses"></div>
-                        <button type="button" id="add-course-button">Add Course</button>
+                        <input type="button" id="add-course-button" value="Add Course">
                     </fieldset>
                 
                     <label for="funny-thing">Funny thing?</label>
@@ -84,5 +80,6 @@
         <div data-include="/jlopezga/itis3135/Components/footer.html"></div>
     </footer>
     
+    <script src="script.js"></script>
     <script src="/jlopezga/itis3135/scripts/HTMLInclude.min.js"></script>
 </html>
