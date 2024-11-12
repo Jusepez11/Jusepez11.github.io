@@ -1,83 +1,87 @@
-// Function to validate form fields
-function validateForm(event) {
-    // Get all required inputs
-    const requiredInputs = document.querySelectorAll('[required]');
-    let isValid = true;
-    let firstInvalidField = null;
+document.addEventListener('DOMContentLoaded', function() {
+    // Get the add course button and courses container
+    const form = document.getElementById('form');
+    const newPage = document.getElementById('result');
+    const addCourseButton = document.getElementById('add-course-button');
+    const coursesContainer = document.getElementById('courses');
+    const submit = document.getElementById('submit');
+    const isValid = true;
+    let courseCount = 0;
+    const elements = [
+        document.getElementById('name'),
+        document.getElementById('mascot'),
+        document.getElementById('image'),
+        document.getElementById('imag-caption'),
+        document.getElementById('personal-background'),
+        document.getElementById('professional-background'),
+        document.getElementById('academic-background'),
+        document.getElementById('web-dev-background'),
+        document.getElementById('platform'),
+        document.getElementById('agreement')
+    ]
 
-    // Check each required field
-    requiredInputs.forEach(input => {
-        // Remove any existing error styling
-        input.classList.remove('invalid');
-        
-        // Check if empty or (for file input) no file selected
-        if ((input.type === 'file' && !input.files.length) || 
-            (!input.value.trim() && input.type !== 'file')) {
-            input.classList.add('invalid');
-            isValid = false;
-            // Store first invalid field for focus
-            if (!firstInvalidField) firstInvalidField = input;
-        }
-        
-        // Special check for file type
-        if (input.type === 'file' && input.files.length) {
-            const file = input.files[0];
-            const validTypes = ['image/jpeg', 'image/png', 'image/jpg'];
-            if (!validTypes.includes(file.type)) {
-                input.classList.add('invalid');
+    document.querySelector('form').submit.addEventListener('click', function(){
+        elements.forEach(element => {
+            if (!element.value) {
                 isValid = false;
-                if (!firstInvalidField) firstInvalidField = input;
+                alert('Please fill in all required fields correctly.');
             }
+        });
+    });
+    
+    submit.addEventListener('click', function(event){
+        if (isValid){
+            event.preventDefault();
+            alert('Broken funciona');
+            isValid = false;
+            
+
+            form.classList.add('hidden');
+            newPage.classList.remove('hidden');
+
+            //name
+            newPage.innerHTML = `<h2>${elements[0].value}||${elements[1].value}</h2>`;
+            newPage.innerHTML = `<img src=${elements[2].value} alt=${elements[3].value}>`;
+            newPage.innerHTML = `<p class="me"><strong>Personal background:</strong>${elements[4].value}</p>`;
+            newPage.innerHTML = `<p class="me"><strong>Professional Background:</strong>${elements[5].value}</p>`;
+            newPage.innerHTML = `<p class="me"><strong>Academic Background:</strong>${elements[6].value}</p>`;
+            newPage.innerHTML = `<p class="me"><strong>Background in this Subject:</strong>${elements[7].value}</p>`;
+            newPage.innerHTML = `<p class="me"><strong>Primary Computer Platform:</strong>${elements[8].value}</p>`;
+            newPage.innerHTML = `<p class="me"><strong>Courses I'm in &amp; Why:</strong>${elements[1].value}</p>`;
         }
     });
 
-    // Check courses (assuming at least one course is required)
-    const courses = document.querySelectorAll('#courses input[type="text"]');
-    if (courses.length === 0 || !Array.from(courses).some(course => course.value.trim())) {
-        document.getElementById('courses').classList.add('invalid');
-        isValid = false;
-    }
-
-    // Check agreement checkbox
-    if (!document.getElementById('agreement').checked) {
-        document.getElementById('agreement').classList.add('invalid');
-        isValid = false;
-    }
-
-    // Focus on first invalid field if any
-    if (firstInvalidField) {
-        firstInvalidField.focus();
-    }
-
-    return isValid;
-}
-
-// Add some helpful CSS
-const style = document.createElement('style');
-style.textContent = `
-    .invalid {
-        border-color: red !important;
-        background-color: #fff0f0;
-    }
-    .invalid:focus {
-        outline-color: red;
-    }
-`;
-document.head.appendChild(style);
-
-// Add form submit event listener
-document.querySelector('form').addEventListener('submit', function(event) {
-    if (!validateForm()) {
-        event.preventDefault();
-        alert('Please fill in all required fields correctly.');
-    }
-});
-
-// Optional: Real-time validation
-document.querySelectorAll('input, textarea, select').forEach(input => {
-    input.addEventListener('input', function() {
-        if (this.classList.contains('invalid')) {
-            validateForm();
-        }
+    // Add click event listener to the button
+    addCourseButton.addEventListener('click', function() {
+        // Create a container div for the new course input and its remove button
+        const courseDiv = document.createElement('div');
+        
+        // Create the text input
+        const courseInput = document.createElement('input');
+        courseInput.type = 'text';
+        courseInput.name = 'course' + courseCount;
+        courseInput.id = 'course' + courseCount;
+        courseInput.placeholder = 'Enter course name';
+        courseInput.required = true;
+        
+        // Create the remove button
+        const removeButton = document.createElement('input');
+        removeButton.type = 'button';
+        removeButton.value = 'Remove';
+        removeButton.className = 'remove-course';
+        
+        // Add click event listener to remove button
+        removeButton.addEventListener('click', function() {
+            courseDiv.remove();
+        });
+        
+        // Add the elements to the container
+        courseDiv.appendChild(courseInput);
+        courseDiv.appendChild(removeButton);
+        
+        // Add the container to the courses section
+        coursesContainer.appendChild(courseDiv);
+        
+        courseCount++;
     });
 });
