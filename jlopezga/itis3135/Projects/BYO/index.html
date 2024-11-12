@@ -14,7 +14,7 @@
     <body>
         <main>
             <h2>BYO Site</h2>
-            <form>
+            <form id="form">
                 <fieldset id="byo-form" class="form">
                         <label for="name">Name:</label>
                         <input type="text" id="name" required placeholder="Enter your name">                
@@ -63,17 +63,20 @@
                 
                     <label>
                         <fieldset>
-                            <input type="checkbox" id="agreement" required>
-                            I understand that what is on this page is not password protected and I will not put anything here that I don’t want publicly available.
+                            <input type="checkbox" id="agreement" required>I understand that what is on this page is not password protected and I will not put anything here that I don’t want publicly available.
                         </fieldset>
                     </label>
 
-                    <div>
-                        <input type="submit" value="Submit">
+                    <div id="final-buttons">
+                        <input id="submit" type="submit" value="Submit">
                         <input type="reset" value="Reset">
                     </div>
                 </fieldset>
             </form>
+
+            <section id="result" class="hidden">
+
+            </section>
         </main>
     </body>
     <footer class="footer">        
