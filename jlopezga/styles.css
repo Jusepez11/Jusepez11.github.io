@@ -277,11 +277,15 @@ fieldset[id="byo-form"] label{
     display: block;
 }
 
-fieldset[id="byo-form"] label:has(input[type="checkbox"]) {
-    display: flex;
-    align-items: flex-start;
-    gap: 10px;
-    line-height: 1.4;
+fieldset[id="byo-form"] label[for] {
+    margin-bottom: 5px;
+    font-weight: bold;
+}
+
+/* Style the checkbox container */
+fieldset[id="byo-form"] fieldset {
+    margin: 20px 0;
+    padding: 10px 0;
 }
 
 fieldset[id="byo-form"] input[type="checkbox"] {
@@ -289,7 +293,33 @@ fieldset[id="byo-form"] input[type="checkbox"] {
     vertical-align: middle;
 }
 
+fieldset[id="byo-form"] label:has(input[type="checkbox"]) {
+    display: flex;
+    align-items: flex-start;
+    gap: 10px;
+    line-height: 1.4;
+}
+
+/* Style input fields */
+fieldset[id="byo-form"] input[type="text"],
+fieldset[id="byo-form"] input[type="file"],
+fieldset[id="byo-form"] select,
+fieldset[id="byo-form"] textarea {
+    width: 80%;
+    padding: 8px;
+    margin-bottom: 15px;
+    border: 1px solid #555;
+    border-radius: 4px;
+    background-color: #ffffff;
+}
+
+
 form fieldset label,
 form fieldset fieldset{
     padding-top: 4%;
+}
+
+
+div[id="final-buttons"] {
+    padding-top: 20px;
 }
