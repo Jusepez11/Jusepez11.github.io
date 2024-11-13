@@ -293,7 +293,7 @@ fieldset[id="byo-form"] input[type="checkbox"] {
     vertical-align: middle;
 }
 
-fieldset[id="byo-form"] label:has(input[type="checkbox"]) {
+#agreement-label {
     display: flex;
     align-items: flex-start;
     gap: 10px;
@@ -305,7 +305,6 @@ fieldset[id="byo-form"] input[type="text"],
 fieldset[id="byo-form"] input[type="file"],
 fieldset[id="byo-form"] select,
 fieldset[id="byo-form"] textarea {
-    width: 80%;
     padding: 8px;
     margin-bottom: 15px;
     border: 1px solid #555;
@@ -322,4 +321,17 @@ form fieldset fieldset{
 
 div[id="final-buttons"] {
     padding-top: 20px;
+}
+
+.values-list {
+    margin: 0 auto;
+    max-width: 800px; 
+    padding: 20px 40px; 
+    border: 2px dashed #fff;
+    list-style-position: inside; 
+}
+
+.values-list li {
+    text-align: center; 
+    margin-bottom: 10px; 
 }
