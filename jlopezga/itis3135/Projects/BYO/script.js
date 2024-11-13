@@ -17,11 +17,12 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('academic-background'),
         document.getElementById('web-dev-background'),
         document.getElementById('platform'),
+        document.getElementById('course'),
         document.getElementById('agreement')
-    ]
+    ];
 
     document.querySelector('form').submit.addEventListener('click', function(){
-        elements.forEach(element => {
+        elements.forEach((element) => {
             if (!element.value) {
                 isValid = false;
                 alert('Please fill in all required fields correctly.');
@@ -30,25 +31,23 @@ document.addEventListener('DOMContentLoaded', function() {
     });
     
     submit.addEventListener('click', function(event){
-        if (isValid){
+        
             event.preventDefault();
-            alert('Broken funciona');
-            isValid = false;
-            
-
             form.classList.add('hidden');
             newPage.classList.remove('hidden');
 
+    
+            //const reader = new FileReader();
             //name
-            newPage.innerHTML = `<h2>${elements[0].value}||${elements[1].value}</h2>`;
-            newPage.innerHTML = `<img src=${elements[2].value} alt=${elements[3].value}>`;
-            newPage.innerHTML = `<p class="me"><strong>Personal background:</strong>${elements[4].value}</p>`;
-            newPage.innerHTML = `<p class="me"><strong>Professional Background:</strong>${elements[5].value}</p>`;
-            newPage.innerHTML = `<p class="me"><strong>Academic Background:</strong>${elements[6].value}</p>`;
-            newPage.innerHTML = `<p class="me"><strong>Background in this Subject:</strong>${elements[7].value}</p>`;
-            newPage.innerHTML = `<p class="me"><strong>Primary Computer Platform:</strong>${elements[8].value}</p>`;
-            newPage.innerHTML = `<p class="me"><strong>Courses I'm in &amp; Why:</strong>${elements[1].value}</p>`;
-        }
+            newPage.innerHTML = `<h2>${elements[0].value} || ${elements[1].value}</h2><br>
+                
+                <p class="me"><strong>Personal background:</strong>${elements[4].value}</p><br>
+                <p class="me"><strong>Professional Background:</strong>${elements[5].value}</p><br>
+                <p class="me"><strong>Academic Background:</strong>${elements[6].value}</p><br>
+                <p class="me"><strong>Background in this Subject:</strong>${elements[7].value}</p><br>
+                <p class="me"><strong>Primary Computer Platform:</strong>${elements[8].value}</p><br>
+                <p class="me"><strong>Courses I'm in &amp; Why:</strong>${elements[1].value}</p>`;
+                        
     });
 
     // Add click event listener to the button
@@ -59,8 +58,9 @@ document.addEventListener('DOMContentLoaded', function() {
         // Create the text input
         const courseInput = document.createElement('input');
         courseInput.type = 'text';
-        courseInput.name = 'course' + courseCount;
-        courseInput.id = 'course' + courseCount;
+        courseInput.classList = 'course';
+        courseInput.name = 'course-' + courseCount;
+        courseInput.id = 'course-' + courseCount;
         courseInput.placeholder = 'Enter course name';
         courseInput.required = true;
         
