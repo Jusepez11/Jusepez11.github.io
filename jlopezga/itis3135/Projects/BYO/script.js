@@ -7,7 +7,11 @@ document.addEventListener('DOMContentLoaded', function() {
     const imageInput = document.getElementById('image');
     let imageData = '';
     let isValid = true;
-    let courseCount = 0;
+    let courseCount = 1;
+
+    let courses = [
+        document.getElementById('course-0')
+    ];
     
     const elements = [
         document.getElementById('name'),
@@ -19,12 +23,16 @@ document.addEventListener('DOMContentLoaded', function() {
         document.getElementById('academic-background'),
         document.getElementById('web-dev-background'),
         document.getElementById('platform'),
-        document.getElementById('course'),
         document.getElementById('agreement')
     ];
 
-    // Handle image upload
-    imageInput.addEventListener('change', function(e) {
+    /**
+     * ${imageData ? `<img src="${imageData}" alt="${elements[3].value}">
+            <p><em>${elements[3].value}</em></p>` : ''}
+     */
+    
+
+    imageInput.addEventListener('input', function(e) {
         const file = e.target.files[0];
         const reader = new FileReader();
         
@@ -48,19 +56,26 @@ document.addEventListener('DOMContentLoaded', function() {
     
     submit.addEventListener('click', function(event) {
         event.preventDefault();
-        form.classList.add('hidden');
-        newPage.classList.remove('hidden');
 
         newPage.innerHTML = `
             <h2>${elements[0].value} || ${elements[1].value}</h2>
-            ${imageData ? `<img src="${imageData}" alt="${elements[3].value}">
-            <p><em>${elements[3].value}</em></p>` : ''}
+            
             <p class="me"><strong>Personal background:</strong>${elements[4].value}</p><br>
             <p class="me"><strong>Professional Background:</strong>${elements[5].value}</p><br>
             <p class="me"><strong>Academic Background:</strong>${elements[6].value}</p><br>
             <p class="me"><strong>Background in this Subject:</strong>${elements[7].value}</p><br>
             <p class="me"><strong>Primary Computer Platform:</strong>${elements[8].value}</p><br>
-            <p class="me"><strong>Courses I'm in &amp; Why:</strong>${elements[9].value}</p>`;
+            <p class="me"><strong>Courses I'm in &amp; Why:</strong></p>
+            <ul>
+            <li>${courses[0].value}</li>
+            <li>${courses[1].value}</li>
+            `;
+
+        courses.forEach((course) => {
+            newPage.innerHTML += `<li>${course.value}</li>`;
+        });
+
+        newPage.innerHTML += `</ul>`;
     });
 
     addCourseButton.addEventListener('click', function() {
@@ -88,5 +103,7 @@ document.addEventListener('DOMContentLoaded', function() {
         coursesContainer.appendChild(courseDiv);
         
         courseCount++;
+
+        courses.push(document.getElementById(`course-${courseCount}`));
     });
 });
