@@ -43,16 +43,20 @@
                     
                     <label for="platform">Primary Computer Platform:</label>
                     <select id="platform" required>
-                        <option value="Windows">Windows</option>
-                        <option value="Mac">Mac</option>
-                        <option value="Linux">Linux</option>
+                        <option value="windows">Windows</option>
+                        <option value="mac">Mac</option>
+                        <option value="linux">Linux</option>
+                        <option value="raspberrypi">Raspberry Pi</option>
+                        <option value="other">other</option>
                     </select>
                 
                     <br><br>
 
                     <fieldset>
                         <legend>Courses Currently Taking</legend>
-                        <div id="courses"></div>
+                        <div id="courses">
+                            <input type="text" class="course" name="course-0" id="course-0" placeholder="Enter course name" required>
+                        </div>
                         <input type="button" id="add-course-button" value="Add Course">
                     </fieldset>
                 
