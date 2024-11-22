@@ -218,9 +218,10 @@ p[class="hall-description"]{
 
 .social-media:hover .social-text{
     color: #ffffff;
-    a{
-        color: #00e1ff;
-    }
+}
+
+.social-media:hover .social-text a{
+    color: #00e1ff;    
 }
 
 .social-media img {
