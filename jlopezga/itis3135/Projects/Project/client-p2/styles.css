@@ -201,3 +201,71 @@ p[class="hall-description"]{
     display: inline-block;
     margin: 40px 5%;
 }
+
+.social-media {
+    display: inline-flex;
+    background-color: #fff;
+    align-items: center;
+    padding: 10px;
+    border-radius: 8px;
+    margin: 10px;
+    margin-bottom: 40px;
+}
+
+.social-media:hover{
+    background-color: #a8a8a8;
+}
+
+.social-media:hover .social-text{
+    color: #ffffff;
+    a{
+        color: #00e1ff;
+    }
+}
+
+.social-media img {
+    width: 250px; 
+    height: 250px;
+    object-fit: contain;
+}
+
+.social-media div {
+    margin-left: 10px;
+    color: #1a1b26;
+}
+
+.home-text {
+    align-items: flex-start;  
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;   
+    text-align: left;
+    padding: 20px 30px;      
+    margin: 0 auto;          
+    margin-bottom: 40px;
+    border-radius: 8px;
+    width: 80%;         
+    max-width: 800px;   
+}
+
+.home-text h3 {
+    margin-top: 0;      
+    margin-bottom: 15px;
+    color: #1a1b26;
+}
+
+.home-text ul {
+    width: 100%;        
+    margin: 0;          
+    padding-left: 20px; 
+}
+
+.home-text li {
+    color: #1a1b26;
+    margin-bottom: 8px; 
+}
+
+.home-text ul ul {
+    margin-top: 8px;    
+    margin-bottom: 8px; 
+}
