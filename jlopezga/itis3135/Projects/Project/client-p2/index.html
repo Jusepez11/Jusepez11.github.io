@@ -17,7 +17,7 @@
             <section id="home" class="">
                 <h2>Home</h2>
 
-                <div class="home-text">
+                <div class="text-block">
                     <h3>Club Meetings &amp; Collaboration</h3>
                     <ul>
                         <li>We provide an inclusive space for game developers to collaborate and share diverse <br>
@@ -32,7 +32,7 @@
                     </ul>
                 </div>
 
-                <div class="home-text">
+                <div class="text-block">
                     <h3>Workshops &amp;Learning</h3>
                     <ul>
                         <li>Regular tutorials and workshops on game development topics</li>
@@ -44,7 +44,7 @@
                     </ul>
                 </div>
 
-                <div class="home-text">
+                <div class="text-block">
                     <h3>Game Jams &amp;Events</h3>
                     <ul>
                         <li>Semester-based 49er Game Jams for students</li>
@@ -60,7 +60,7 @@
                     </ul>
                 </div>
                 
-                <div class="home-text">
+                <div class="text-block">
                     <h3>Get Involved&excl;</h3>
                     <ul>
                         <li>Join our Discord server (preferred method of contact)</li>
@@ -76,29 +76,124 @@
                     <img id="team" src="img/group-programmers.png" alt="A group of people programming at night">
                     <figcaption><em>The team</em></figcaption>
                 </figure>
+                    <div class="text-block">
+                        <h3>Our Story</h3>
+                        <p>Founded in 2016 by a small group of passionate student developers who met in the College of Computing's hallways, the UNCC Game Development Club has grown from informal Unity tutorial sessions in empty classrooms to a thriving community of over 200 members. Our founders believed that game development could bring together students from all disciplines, creating a unique space where art meets code, and stories meet systems.</p>
+                    </div>
+                
+                    <div class="text-block">
+                        <h3>Mission</h3>
+                        <p>We strive to empower students to transform their gaming passions into tangible skills and creative projects. By fostering an inclusive environment that welcomes all skill levels and backgrounds, we aim to break down the barriers between different disciplines in game development, enabling our members to learn, collaborate, and innovate together in ways that reflect the modern gaming industry's collaborative nature.</p>
+                    </div>
+                
+                    <div class="text-block">
+                        <h3>Vision</h3>
+                        <p>We envision our club as a springboard for the next generation of game developers, where every member can find their unique role in the gaming industry. Whether creating immersive worlds, crafting compelling narratives, designing engaging mechanics, or building robust systems, we believe that by working together, we can push the boundaries of what student game developers can achieve while building lasting professional relationships that extend beyond graduation.</p>
+                    </div>
             </section>
             
-            <section id="project-gallery" class="hidden">
-                <h2>Project Gallery</h2>
-
+            <section id="feedback" class="hidden">
+                <h2>Feedback</h2>
+                <form>
+                    <fieldset class="form-block">
+                        <label id="contact" for="contact"><b>Contact Information</b></label><br>
+                        
+                        <label for="name">Name:</label>
+                        <br>
+                        <input type="text" id="name" name="name" placeholder="Enter your name" required><br>
+                        
+                        <label for="phone">Phone Number:</label>
+                        <br>
+                        <input type="text" id="phone-input" name="phone" placeholder="Enter your phone number" required><br>
+                        <input type="range" min="1111111111" max="9999999999" value="1111111111" class="slider" id="phone-slider" name="phone"><br>
+                        
+                        
+                        <script>
+                        const phoneSlider = document.getElementById('phone-slider');
+                        const phoneInput = document.getElementById('phone-input');
+                        
+                        // Function to format phone number as (xxx) xxx-xxxx
+                        function formatPhoneNumber(phoneNumber) {
+                            const cleaned = ('' + phoneNumber).replace(/\D/g, '');
+                            const match = cleaned.match(/^(\d{3})(\d{3})(\d{4})$/);
+                            if (match) {
+                            return '(' + match[1] + ') ' + match[2] + '-' + match[3];
+                            }
+                            return phoneNumber;
+                        }
+                        
+                        // Update text box when the slider moves
+                        phoneSlider.oninput = function() {
+                            phoneInput.value = formatPhoneNumber(this.value);
+                        };
+                        
+                        // Update slider when the text box changes
+                        phoneInput.oninput = function() {
+                            const unformatted = phoneInput.value.replace(/\D/g, ''); // Remove non-numeric characters
+                            phoneSlider.value = unformatted;
+                            phoneInput.value = formatPhoneNumber(unformatted);
+                        };
+                        </script>
+    
+                        <label for="email">Email</label><br>
+                        <input type="email" id="email" name="email" placeholder="Enter your email address" required>
+                        <br><br>
+    
+                        <section class="services">
+                            <label>Message</label>
+                            <textarea></textarea>
+                            <br>
+                        </section>
+    
+                        <section>
+                            <label><b>Preferred Contact Method</b></label><br>
+                            <input type="radio" id="contact-email" name="contact-method" value="Email" checked="checked" required>
+                            <label for="contact-email">Email</label><br>
+                            <input type="radio" id="contact-phone" name="contact-method" value="Phone">
+                            <label for="contact-phone">Phone</label>
+                            <br><br>
+                        </section>
+    
+                        <section>
+                            <label for="ad">How did you hear about us?</label>
+                            <select id="heard" name="heard" required><br>
+                                <option value="select_service">Select an option</option>
+                                <option value="ninerengage">Niner Engage</option>
+                                <option value="facebook">Facebook</option>
+                                <option value="instagram">Instagram</option>
+                                <option value="twitter">Twitter</option>
+                                <option value="linkedin">LinkedIn</option>
+                                <option value="youtube">YouTube</option>
+                                <option value="other">Other</option>
+                            </select>
+                            <br><br>
+                        </section>
+                        <section class="buttons">
+                            <button type="reset" id="button-reset">Reset</button>
+                            <button type="submit" id="button-submit">Submit</button>
+                        </section>
+                    </fieldset>            
+                </form>
             </section>
             
             <section id="hall-of-fame" class="hidden">
-                <h2>Game Jam Hall Of Fame</h2>                
-                <p class="hall-description">Our talented developers have consistently pushed boundaries in our game jams, creating unforgettable experiences. Notable winners include 'Pixel Dreams,' a surreal platformer that transforms players' thoughts into dynamic level designs, and 'Chromatic Chaos,' a puzzle game where colors influence gravity and physics. These innovative projects showcase our members' creativity and technical expertise, from intricate pixel art to sophisticated gameplay mechanics. Each winning game demonstrates not just programming skill, but the unique vision and storytelling abilities that make game development an art form. These success stories inspire new members and remind us that great games can emerge from just 48 hours of passionate development.</p>
-                
+                <h2>Game Jam Hall Of Fame</h2>  
+                <div class="text-block">
+                    <p class="hall-description">Our talented developers have consistently pushed boundaries in our game jams, creating unforgettable experiences. Notable winners include 'Pixel Dreams,' a surreal platformer that transforms players' thoughts into dynamic level designs, and 'Chromatic Chaos,' a puzzle game where colors influence gravity and physics. These innovative projects showcase our members' creativity and technical expertise, from intricate pixel art to sophisticated gameplay mechanics. Each winning game demonstrates not just programming skill, but the unique vision and storytelling abilities that make game development an art form. These success stories inspire new members and remind us that great games can emerge from just 48 hours of passionate development.</p>
+                </div>          
+
                 <div class="top-3">                    
-                    <figure class="games">
+                    <figure class="text-block">
                         <img src="img/game1.jpg" alt="Game with most votes by the club">
                         <figcaption><em>1st place game</em></figcaption>
                     </figure>
 
-                    <figure class="games">
+                    <figure class="text-block">
                         <img src="img/game2.png" alt="Game with 2nd most votes by the club">
                         <figcaption><em>2nd place game</em></figcaption>
                     </figure>
 
-                    <figure class="games">
+                    <figure class="text-block">
                         <img src="img/game3.png" alt="Game with 3rd most votes by the club">
                         <figcaption><em>3rd place game</em></figcaption>
                     </figure>
@@ -148,6 +243,8 @@
                     </div>
                 </div>
             </section>
+
+            
         </main>
     <footer class="footer">        
         <div data-include="Components/footer.html"></div>
