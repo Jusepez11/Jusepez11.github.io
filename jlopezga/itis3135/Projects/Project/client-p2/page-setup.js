@@ -1,7 +1,7 @@
 const elements = [
     document.getElementById('home'),
     document.getElementById('about'),
-    document.getElementById('project-gallery'),
+    document.getElementById('feedback'),
     document.getElementById('hall-of-fame'),
     document.getElementById('join-us')
 ];
