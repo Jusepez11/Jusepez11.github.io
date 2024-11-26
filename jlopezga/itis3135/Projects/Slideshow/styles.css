@@ -224,17 +224,6 @@ footer {
     padding-bottom: auto;
 }
 
-.slideshow {
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    transform-style: preserve-3d;
-    transform: perspective(500px);
-    gap: 10px; 
-    width: 100%;
-    padding: 20px 0;
-}
-
 .item {
     margin: 0;
     padding: 0;
@@ -247,32 +236,83 @@ footer {
     object-fit: cover;
 }
 
-.slideshow .item{
+.slideshow-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transform: perspective(500px);
+    gap: 10px;  /* Removed gap completely */
+    transform: scale(50%);  /* Back to original scale */
+    padding: 20px 0;
+    margin: -100px auto;  /* Added negative margin to bring it closer to main image */
+}
+
+.slideshow-bar .item{
     transition: .5s;
     filter: brightness(.1);
 }
 
-.slideshow .item:hover{
+.slideshow-bar .item:hover{
     filter: brightness(1);
     transform: translateZ(70px);
 }
 
-.slideshow .item:hover + figure{
-    filter: brightness(.6);
+.slideshow-bar .item:hover + figure{
+    filter: brightness(.4);
     transform: translateZ(15px);
 }
 
-.slideshow .item:hover + figure + figure{
-    filter: brightness(.4);
+.slideshow-bar .item:hover + figure + figure{
+    filter: brightness(.2);
     transform: translateZ(5px);
 }
 
-.slideshow .item:has(+ figure:hover){
-    filter: brightness(.6);
+.slideshow-bar .item:has(+ figure:hover){
+    filter: brightness(.4);
     transform: translateZ(15px);
 }
 
-.slideshow .item:has(+ figure + figure:hover){
-    filter: brightness(.4);
+.slideshow-bar .item:has(+ figure + figure:hover){
+    filter: brightness(.2);
     transform: translateZ(5px);
+}
+
+/* Next & previous buttons */
+.prev,
+.next {
+  top: 40%;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+/* Position the "next button" to the right */
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+/* On hover, add a black background color with a little bit see-through */
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+input{
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+}
+
+.slideshow-main{
+    margin-bottom: 0px;
+    padding-bottom: 0%;
+    
+}
+
+figure{
+    background-color: #ffc2c2;
+    color: #fff ;
+    display: inline-block;
+    padding: 20px;
 }

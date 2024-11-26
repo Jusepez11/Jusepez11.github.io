@@ -15,28 +15,45 @@
     </header>
         <main>
             <h2>Slideshow</h2>
-            <p>JUAN</p>
-
-            <!--imgs need to be shrinked-->
-            <div class="slideshow">
-                <figure class="item">
-                    <img src="img/jam.jpg" alt="">
-                </figure>
-                <figure class="item">
-                    <img src="img/ultrakill.png" alt="">
-                </figure>
-                <figure class="item">
-                    <img src="img/andes.jpg" alt="">
-                </figure>
-                <figure class="item">
-                    <img src="img/namek.jpg" alt="">
-                </figure>
+            <div id="slideshow">
+                <div id="slideshow-main">
+                    <figure id="slideshow-figure">
+                        <img id="slideshow-img" src="img/jungle.jpg" alt="main-picture">
+                    </figure>
+                </div>
+                    
+                <!-- Next and previous buttons -->
+                <input type="button" class="prev" id="prev" value="&#10094;">
+                <input type="button" class="next" id="next" value="&#10095;">
+                <!--imgs need to be shrinked-->
+                <div class="slideshow-bar">
+                    <figure class="item">
+                        <img id="img1" src="img/jungle.jpg" alt="J: for Jungle">
+                    </figure>
+                    <figure class="item">
+                        <img id="img2" src="img/universe.jpg" alt="U for Universe">
+                    </figure>
+                    <figure class="item">
+                        <img id="img3" src="img/astronat.jpg" alt="A for Astronaut">
+                    </figure>
+                    <figure class="item">
+                        <img id="img4" src="img/nothing.jpg" alt="N for Nothing">
+                    </figure>
+                </div>
             </div>
+
+            <p>
+                <strong>AI prompts used</strong>
+            </p>
+            <ul>
+                <li> i need the pictures need to be made by me or you, so help me make 4 images each that is related to each letter of JUAN</li>
+            </ul>
         </main>
     <footer class="footer">        
         <div data-include="/jlopezga/itis3135/Components/footer.html"></div>
     </footer>
     </body>
     
+    <script src="script.js"></script>
     <script src="/jlopezga/itis3135/scripts/HTMLInclude.min.js"></script>
 </html>
