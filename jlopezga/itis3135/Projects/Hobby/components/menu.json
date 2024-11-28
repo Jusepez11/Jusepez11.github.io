@@ -1,0 +1,9 @@
+[
+    {"name": "What", "url":"#what", "id":"what-menu"},
+    {"name": "Who", "url":"#who", "id":"who-menu"},
+    {"name": "When", "url":"#when", "id":"when-menu"},
+    {"name": "Where", "url":"#where", "id":"where-menu"},
+    {"name": "How", "url":"#how", "id":"how-menu"},
+    {"name": "Why", "url":"#why", "id":"why-menu"},
+    {"name": "AI Prompts", "url":"#ai", "id":"ai-menu"}
+]
