@@ -1,19 +1,26 @@
 document.addEventListener("DOMContentLoaded", function() {
+    const title = document.getElementById("title");
+    const h1Title = document.createElement("h1");
+    h1Title.textContent = title.innerHTML;
+
     // Fetch JSON data
     fetch("menu.json")
         .then((response) => response.json())
         .then((data) => {
             // Process JSON data
-            const menuContainer = document.getElementById("menu-container");
+            const menuContainer = document.getElementById("header");
+            
+            const hr = document.createElement('hr');
+            hr.className = 'hr-nav';
 
             const header = document.createElement('div');
             header.className = 'topnav';
             
-            
+            header.appendChild(h1Title);
             menuContainer.appendChild(header);
             data.forEach((item) => {
                 if (item.name === 'divider'){
-                    header.appendChild(document.createElement("br"));
+                    header.appendChild(hr);
                 }else{
                     // Create menu item link element
                     const menuItem = document.createElement("a");
@@ -28,35 +35,59 @@ document.addEventListener("DOMContentLoaded", function() {
         })
         .catch(error => console.error("Error fetching menu:", error));
 
-        fetch("footer.json")
-        .then((response) => response.json())
-        .then((data) => {
-            // Process JSON data
-            const footerMenu = document.getElementById("footer");
-
-            const footer = document.createElement('div');
-            footer.className = 'footer-content';
-            
-            const fieldset = document.createElement('fieldset');
-            const span = document.createElement('span');
-
-            fieldset.appendChild(span);
-            footer.appendChild(fieldset);            
-            footerMenu.appendChild(footer);
-            data.forEach((item) => {
-                // Create menu item link element
-                const menuItem = document.createElement("a");
-                menuItem.classList.add("menu-item");
-                menuItem.textContent = `${item.name} | `;
-                menuItem.href = item.url; // Assuming each menu item has a 'url' property in JSON
-
-                // Append menu item to the container
-                span.appendChild(menuItem);
-            });
-        })
-        .catch(error => console.error("Error fetching menu:", error));
-
 });
+
+    fetch("footer.json")
+    .then((response) => response.json())
+    .then((data) => {
+        // Process JSON data
+        const footerMenu = document.getElementById("footer");
+
+        const footer = document.createElement('div');
+        footer.className = 'footer-content';
+        
+        const fieldset = document.createElement('fieldset');
+        const span = document.createElement('span');
+
+        fieldset.appendChild(span);
+        footer.appendChild(fieldset);            
+        footerMenu.appendChild(footer);
+
+
+        data.forEach((item) => {
+            // Create menu item link element
+            const menuItem = document.createElement("a");
+            menuItem.classList.add("menu-item");
+            menuItem.textContent = `${item.name}`;
+            menuItem.href = item.url; // Assuming each menu item has a 'url' property in JSON
+
+
+
+            // Append menu item to the container
+            span.appendChild(menuItem);
+            if (data[data.length-1] !== item){
+                span.innerHTML += ' | ';
+            }
+        });
+        const footerText = document.createElement("div");
+        footer.innerHTML += `
+        <p id="built">Page built by &nbsp; <a href="/jlopezga/itis3135/Projects/Dinainca-SA/index.html">Dinainca S.A.</a> &nbsp; © 2024 &nbsp; 
+            <a href="https://www.freecodecamp.org/certification/jusepez11/responsive-web-design">&nbsp;Certified in responsive Web Design</a>
+            <a href="https://www.freecodecamp.org/certification/jusepez11/javascript-algorithms-and-data-structures-v8">Certified in JS</a>
+    
+        </p>
+    
+    <div class="validation-container">
+        <a href="https://validator.w3.org/check?uri=https://jvidal2.github.io/itis3135/" id="validation-link-html">
+            <img src="/jlopezga/itis3135/images/button_validation_html5.png" class="validation" width="88" height="31" alt="Validate webpage HTML.">
+        </a>
+
+        <a href="https://jigsaw.w3.org/css-validator/check/https://jvidal2.github.io/itis3135/" id="validation-link-css">
+            <img src="/jlopezga/itis3135/images/button_validation_css.png" class="validation" width="88" height="31" alt="Validate webpage CSS.">
+        </a>
+    </div>`;
+    })
+    .catch(error => console.error("Error fetching menu:", error));
 
 // Function to validate HTML
 function validateHTML() {
