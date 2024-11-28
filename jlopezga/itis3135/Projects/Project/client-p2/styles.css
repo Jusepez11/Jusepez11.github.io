@@ -96,9 +96,16 @@ a{
 }
 
 .footer-content {
+    flex-shrink: 0;
+    bottom: 0;
+    background: #2e3440;
+    margin: 50px -10px 0px;
+    padding: 15px 10px;
+    color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -108,23 +115,31 @@ a{
     gap: 10px;
 }
 
-footer {
-    flex-shrink: 0;
-    position: relative;
-    bottom: 0;
-    background: #2e3440;
-    margin-top: auto;
-    padding: 15px 10px;
-    color: #fff;
+.footer-content #built{
+    display: inline-flex;
+    justify-content: center;
 }
 
-.topnav, .hub {
+.topnav {
     overflow: hidden;
-    padding-left: 20px;
-    padding-right: 20px;
-    border-radius :10px;
+    padding-bottom: 20px;
+    margin: -10px -8px 10px;
 }
 
+.topnav a {
+    color: #f2f2f2;
+    padding: 14px 16px;
+    text-decoration: none;
+    text-align: center;
+    font-size: 17px;
+    display: inline-block;
+}
+
+.topnav a:hover {
+    background-color: #ddd;
+    color: black;
+    border-radius: 12px;
+}
 
 .hub{
     margin-top: 20px;
