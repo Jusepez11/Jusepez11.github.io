@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="utf-8">
-        <title>Client Project</title>
+        <title id="title">Client Project</title>
         <meta name="viewport" content="width=device-width, initial-scale=1.0"> 
         <link rel="icon" href="/jlopezga/logo.ico">
         <link rel="stylesheet" href="styles.css">
@@ -10,11 +10,11 @@
     </head>
 
 <body>    
-    <header>
-        <div data-include="Components/header.html"></div>
+    <header id="header">
+
     </header>
         <main>
-            <section id="home" class="">
+            <section id="home" class="hidden">
                 <h2>Home</h2>
 
                 <div class="text-block">
@@ -176,29 +176,38 @@
                 </form>
             </section>
             
-            <section id="hall-of-fame" class="hidden">
+            <section id="hall-of-fame" class="">
                 <h2>Game Jam Hall Of Fame</h2>  
+                
                 <div class="text-block">
                     <p class="hall-description">Our talented developers have consistently pushed boundaries in our game jams, creating unforgettable experiences. Notable winners include 'Pixel Dreams,' a surreal platformer that transforms players' thoughts into dynamic level designs, and 'Chromatic Chaos,' a puzzle game where colors influence gravity and physics. These innovative projects showcase our members' creativity and technical expertise, from intricate pixel art to sophisticated gameplay mechanics. Each winning game demonstrates not just programming skill, but the unique vision and storytelling abilities that make game development an art form. These success stories inspire new members and remind us that great games can emerge from just 48 hours of passionate development.</p>
                 </div>          
 
-                <div class="top-3">                    
-                    <figure class="text-block">
-                        <img src="img/game1.jpg" alt="Game with most votes by the club">
-                        <figcaption><em>1st place game</em></figcaption>
-                    </figure>
-
-                    <figure class="text-block">
-                        <img src="img/game2.png" alt="Game with 2nd most votes by the club">
-                        <figcaption><em>2nd place game</em></figcaption>
-                    </figure>
-
-                    <figure class="text-block">
-                        <img src="img/game3.png" alt="Game with 3rd most votes by the club">
-                        <figcaption><em>3rd place game</em></figcaption>
-                    </figure>
+                <div id="slideshow">
+                    <div id="slideshow-main">
+                        <figure id="slideshow-figure">
+                            <img id="slideshow-img" src="img/game1.jpg" alt="main-picture">
+                        </figure>
+                    </div>
+                        
+                    <!-- Next and previous buttons -->
+                    <input type="button" class="prev" id="prev" value="&#10094;">
+                    <input type="button" class="next" id="next" value="&#10095;">
+                    <!--imgs need to be shrinked-->
+                    <div class="slideshow-bar">
+                        <figure class="item">
+                            <img id="img1" src="img/game1.jpg" alt="1st place game">
+                        </figure>
+                        <figure class="item">
+                            <img id="img2" src="img/game2.png" alt="2nd place game">
+                        </figure>
+                        <figure class="item">
+                            <img id="img3" src="img/game3.png" alt="3rd place game">
+                        </figure>
+                    </div>
                 </div>
 
+                <script src="slideshow.js"></script>
             </section>
             
             <section id="join-us" class="hidden">
@@ -246,10 +255,10 @@
 
             
         </main>
-    <footer class="footer">        
-        <div data-include="Components/footer.html"></div>
+    <footer id="footer">
+
     </footer>
     </body>
     <script src="page-setup.js"></script>
-    <script src="/jlopezga/itis3135/scripts/HTMLInclude.min.js"></script>
+   <script src="/jlopezga/itis3135/scripts/page-setup.js"></script>
 </html>
