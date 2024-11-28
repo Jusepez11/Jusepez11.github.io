@@ -21,7 +21,7 @@ document.addEventListener("DOMContentLoaded", function() {
             data.forEach((item) => {
                 if (item.name === 'divider'){
                     header.appendChild(hr);
-                }else{
+                } else {
                     // Create menu item link element
                     const menuItem = document.createElement("a");
                     menuItem.classList.add("menu-item");
@@ -32,8 +32,7 @@ document.addEventListener("DOMContentLoaded", function() {
                     header.appendChild(menuItem);
                 }
             });
-        })
-        .catch(error => console.error("Error fetching menu:", error));
+        }).catch((error) => console.error("Error fetching menu:", error));
 
 });
 
@@ -86,8 +85,7 @@ document.addEventListener("DOMContentLoaded", function() {
             <img src="/jlopezga/itis3135/images/button_validation_css.png" class="validation" width="88" height="31" alt="Validate webpage CSS.">
         </a>
     </div>`;
-    })
-    .catch(error => console.error("Error fetching menu:", error));
+    }).catch((error) => console.error("Error fetching menu:", error));
 
 // Function to validate HTML
 function validateHTML() {
