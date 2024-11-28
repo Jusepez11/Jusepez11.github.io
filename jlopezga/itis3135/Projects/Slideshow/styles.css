@@ -138,7 +138,8 @@ input[type="range"] {
     color: black;
 }
 
-footer {
+
+.footer-content {
     flex-shrink: 0;
     position: relative;
     bottom: 0;
@@ -146,13 +147,15 @@ footer {
     margin-top: 50px;
     padding: 15px 10px;
     color: #fff;
-}
-
-.footer-content {
     display: flex;
     flex-direction: column;
     align-items: center;
     gap: 10px;
+}
+
+.footer-content #built{
+    display: inline-flex;
+    justify-content: center;
 }
 
 .footer-content .validation-container {
@@ -278,7 +281,6 @@ footer {
     transform: translateZ(5px);
 }
 
-/* Next & previous buttons */
 .prev,
 .next {
   top: 40%;
@@ -287,13 +289,11 @@ footer {
   font-size: 20px;
 }
 
-/* Position the "next button" to the right */
 .next {
   right: 0;
   border-radius: 3px 0 0 3px;
 }
 
-/* On hover, add a black background color with a little bit see-through */
 .prev:hover,
 .next:hover {
   background-color: rgba(0, 0, 0, 0.8);

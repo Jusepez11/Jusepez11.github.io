@@ -166,6 +166,8 @@ input[type="range"] {
 .topnav {
     overflow: hidden;
     background-color: #1f1f1f;
+    padding-bottom: 20px;
+    margin: -10px -8px 10px;
 }
 
 .topnav a {
@@ -185,15 +187,15 @@ input[type="range"] {
 
 .footer-content {
     flex-shrink: 0;
-    position: relative;
     bottom: 0;
     background: #111;
-    margin-top: 50px;
+    margin: 50px -10px 0px;
     padding: 15px 10px;
     color: #fff;
     display: flex;
     flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 10px;
 }
 
@@ -341,4 +343,10 @@ div[id="final-buttons"] {
 
 #ul-1 li ul li{
     margin-left: -100px;
+}
+
+
+.hr-nav{
+    width: 60%;
+    size: 2;
 }

@@ -303,3 +303,95 @@ p[class="hall-description"]{
 #feedback label:not(#contact-email){
     font-weight: bold;
 }
+
+
+.item {
+    margin: 0;
+    padding: 0;
+}
+
+.item img {
+    display: block; 
+    max-height: 400px; 
+    width: auto;
+    object-fit: cover;
+}
+
+.slideshow-bar {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transform-style: preserve-3d;
+    transform: perspective(500px);
+    gap: 10px;  /* Removed gap completely */
+    transform: scale(50%);  /* Back to original scale */
+    padding: 20px 0;
+    margin: -100px auto;  /* Added negative margin to bring it closer to main image */
+}
+
+.slideshow-bar .item{
+    transition: .5s;
+    filter: brightness(.1);
+}
+
+.slideshow-bar .item:hover{
+    filter: brightness(1);
+    transform: translateZ(70px);
+}
+
+.slideshow-bar .item:hover + figure{
+    filter: brightness(.4);
+    transform: translateZ(15px);
+}
+
+.slideshow-bar .item:hover + figure + figure{
+    filter: brightness(.2);
+    transform: translateZ(5px);
+}
+
+.slideshow-bar .item:has(+ figure:hover){
+    filter: brightness(.4);
+    transform: translateZ(15px);
+}
+
+.slideshow-bar .item:has(+ figure + figure:hover){
+    filter: brightness(.2);
+    transform: translateZ(5px);
+}
+
+.prev,
+.next {
+  top: 40%;
+  color: white;
+  font-weight: bold;
+  font-size: 20px;
+}
+
+.next {
+  right: 0;
+  border-radius: 3px 0 0 3px;
+}
+
+.prev:hover,
+.next:hover {
+  background-color: rgba(0, 0, 0, 0.8);
+}
+
+input{
+    background-color: rgba(0, 0, 0, 0);
+    border: 0;
+}
+
+.slideshow-main{
+    margin-bottom: 0px;
+    padding-bottom: 0%;
+    
+}
+
+#slideshow-figure{
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    color: #272525;
+    display: inline-block;
+    padding: 20px;
+}
