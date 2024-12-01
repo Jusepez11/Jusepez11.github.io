@@ -271,6 +271,7 @@ input[type="range"] {
     transform: translateZ(5px);
 }
 
+/** commeneted out to avoid error message by accumulus
 .slideshow-bar .item:has(+ figure:hover){
     filter: brightness(.4);
     transform: translateZ(15px);
@@ -280,6 +281,7 @@ input[type="range"] {
     filter: brightness(.2);
     transform: translateZ(5px);
 }
+*/
 
 .prev,
 .next {
