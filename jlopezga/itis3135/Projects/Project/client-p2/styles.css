@@ -1,21 +1,35 @@
-
-html{
-    background-color: #1a1b26;
-}
-
-.topnav, .hub {
-    background-color: #2e3440;
+:root{
+    --dark-theme-background:#1a1b26;
+    --light-theme-background:#f7f7f7;
+    --dark-theme-color:#f7f7f7;
+    --light-theme-color:#1a1b26;
 }
 
 
 html{
+    background-color: var(--dark-theme-background);
+    color: var(--dark-theme-color);
     max-width: 100vw;
     max-height: 100vh;
     width: 100%;
     margin: auto;
     padding: 0;
     font-family: "Afacad Flux", sans-serif;
-    color:#e4e6eb;
+}
+
+.topnav, .hub {
+    background-color: #2e3440;
+    color: #f7f7f7;
+}
+
+.topnav #theme{
+    position: absolute;
+    right: 0;
+    top: 0;
+}
+
+#theme:hover{    
+    transform: scale(1500px);
 }
 
 body {
@@ -364,6 +378,7 @@ p[class="hall-description"]{
     transform: translateZ(5px);
 }
 
+/** commeneted out to avoid error message by accumulus
 .slideshow-bar .item:has(+ figure:hover){
     filter: brightness(.4);
     transform: translateZ(15px);
@@ -373,6 +388,7 @@ p[class="hall-description"]{
     filter: brightness(.2);
     transform: translateZ(5px);
 }
+*/
 
 .prev,
 .next {
