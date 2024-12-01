@@ -1,7 +1,8 @@
 [
     {"name": "Home", "url":"#home  ", "id":"home-menu"},
     {"name": "About", "url": "#about  ", "id":"about-menu"},
-{"name": "Game Jam Hall Of Fame", "url":"#hall-of-fame  ", "id":"hall-of-fame-menu"},
+    {"name": "Game Jam Hall Of Fame", "url":"#hall-of-fame  ", "id":"hall-of-fame-menu"},
     {"name": "Feedback", "url":"#feedback  ", "id":"feedback-menu"},
-    {"name": "Join Us", "url":"#join-us  ", "id":"join-us-menu"}
+    {"name": "Join Us", "url":"#join-us  ", "id":"join-us-menu"},
+    {"name":"img", "url":"/jlopezga/itis3135/Projects/Project/client-p2/img/theme-toggle-icon.png", "alt":"theme toggle", "id":"theme"}
 ]
