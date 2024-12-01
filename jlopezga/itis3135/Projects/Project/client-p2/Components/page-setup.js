@@ -2,6 +2,7 @@ document.addEventListener("DOMContentLoaded", function() {
     const title = document.getElementById("title");
     const h1Title = document.createElement("h1");
     h1Title.textContent = title.innerHTML;
+    var a = false;
 
     const elements = [
         document.getElementById('home'),
@@ -24,25 +25,58 @@ document.addEventListener("DOMContentLoaded", function() {
             header.appendChild(h1Title);
             menuContainer.appendChild(header);
             data.forEach((item) => {
-                // Create menu item link element
-                const menuItem = document.createElement("a");
-                menuItem.classList.add("menu-item");
-                menuItem.textContent = item.name;
-                menuItem.href = item.url; // Assuming each menu item has a 'url' property in JSON
-                menuItem.id = item.id;
+                
+                switch (item.name){
+                    case "img":
+                        let isDarkTheme = false;
+                        const theme = document.createElement("img");
+                        theme.alt = item.alt;
+                        theme.src = item.url;
+                        theme.id = item.id;
 
-                menuItem.addEventListener("click", function(){
-                    elements.forEach((element) => {
-                        
-                        element.classList.add('hidden');
-                        if (menuItem.id.startsWith(element.id)){
-                            element.classList.remove('hidden');
-                        }
-                    });
-                });
+                        // Append menu item to the container
+                        header.appendChild(theme);
 
-                // Append menu item to the container
-                header.appendChild(menuItem);
+                        theme.addEventListener("click", function(){
+                            const html = document.querySelector('html');
+                            
+                            if (isDarkTheme) {
+                                theme.src = "/jlopezga/itis3135/Projects/Project/client-p2/img/theme-toggle-icon-dark.png";
+                                html.style.backgroundColor = 'var(--dark-theme-background)';
+                                html.style.color = 'var(--dark-theme-color)';
+                            } else {
+                                theme.src = "/jlopezga/itis3135/Projects/Project/client-p2/img/theme-toggle-icon-light.png";
+                                html.style.backgroundColor = 'var(--light-theme-background)';
+                                html.style.color = 'var(--light-theme-color)';
+                            }
+                            
+                            isDarkTheme = !isDarkTheme;
+                        });
+
+                        break;
+                    default:
+                        // Create menu item link element
+                        const menuItem = document.createElement("a");
+                        menuItem.classList.add("menu-item");
+                        menuItem.textContent = item.name;
+                        menuItem.href = item.url; // Assuming each menu item has a 'url' property in JSON
+                        menuItem.id = item.id;
+
+                        menuItem.addEventListener("click", function(){
+                            elements.forEach((element) => {
+                                
+                                element.classList.add('hidden');
+                                if (menuItem.id.startsWith(element.id)){
+                                    element.classList.remove('hidden');
+                                }
+                            });
+                        });
+
+                        // Append menu item to the container
+                        header.appendChild(menuItem);
+                }
+
+                
                 
             });
         }).catch((error) => console.error("Error fetching menu:", error));
