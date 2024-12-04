@@ -117,7 +117,7 @@ document.addEventListener("DOMContentLoaded", function() {
             footer.innerHTML += `
             <p id="built">Page built by &nbsp; <a href="/jlopezga/itis3135/Projects/Dinainca-SA/index.html">Dinainca S.A.</a> &nbsp; © 2024 &nbsp; 
                 <a href="https://www.freecodecamp.org/certification/jusepez11/responsive-web-design">&nbsp;Certified in responsive Web Design</a>
-                <a href="https://www.freecodecamp.org/certification/jusepez11/javascript-algorithms-and-data-structures-v8">Certified in JS</a>
+                <a href="https://www.freecodecamp.org/certification/jusepez11/javascript-algorithms-and-data-structures-v8">&nbsp;Certified in JS</a>
         
             </p>
         
