@@ -1,8 +1,6 @@
 [   
-    {"name": "Webspace", "url":         "https://webpages.charlotte.edu/jlopezga/ "},
-    {"name": "Github", "url":        "https://github.com/Jusepez11 "},
-    {"name": "Github Pages", "url":     "https://jusepez11.github.io/jlopezga"},
-    {"name": "Github Course Page", "url":         "https://github.com/jusepez11/jusepez11.github.io "},
-    {"name": "FreeCodeCamp", "url":       "https://www.freecodecamp.org/jusepez11 "},
-    {"name": "Codecademy", "url":       "https://www.codecademy.com/profiles/Jusepez11 "}
+    {"name": "Discord", "url":          "http://discord.unccgamedev.org "},
+    {"name": "Twitter", "url":          "http://twitter.unccgamedev.org "},
+    {"name": "Instagram", "url":        "http://instagram.unccgamedev.org "},
+    {"name": "Twitch", "url":           "http://twitch.unccgamedev.org "}
 ]

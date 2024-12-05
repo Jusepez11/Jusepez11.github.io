@@ -13,7 +13,7 @@ document.addEventListener("DOMContentLoaded", function() {
     ];
 
     // Fetch JSON data
-    fetch("Components/menu.json")
+    fetch("components/menu.json")
         .then((response) => response.json())
         .then((data) => {
             // Process JSON data
@@ -81,7 +81,7 @@ document.addEventListener("DOMContentLoaded", function() {
             });
         }).catch((error) => console.error("Error fetching menu:", error));
 
-        fetch("Components/footer.json")
+        fetch("components/footer.json")
         .then((response) => response.json())
         .then((data) => {
             // Process JSON data
@@ -115,6 +115,8 @@ document.addEventListener("DOMContentLoaded", function() {
             });
             const footerText = document.createElement("div");
             footer.innerHTML += `
+            <p>UNCC Game Development Club</p>
+            <p><em>Building Worlds, One Line of Code at a Time</em></p>
             <p id="built">Page built by &nbsp; <a href="/jlopezga/itis3135/Projects/Dinainca-SA/index.html">Dinainca S.A.</a> &nbsp; © 2024 &nbsp; 
                 <a href="https://www.freecodecamp.org/certification/jusepez11/responsive-web-design">&nbsp;Certified in responsive Web Design</a>
                 <a href="https://www.freecodecamp.org/certification/jusepez11/javascript-algorithms-and-data-structures-v8">&nbsp;Certified in JS</a>
