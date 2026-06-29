@@ -1,0 +1,429 @@
+:root {
+    --ink: #301923;
+    --muted: #7c5364;
+    --cream: #fff7ec;
+    --petal: #ffdae8;
+    --rose: #e84475;
+    --rose-dark: #a91749;
+    --marigold: #ffb23f;
+    --mint: #78d6b1;
+    --sky: #87bfe8;
+    --shadow: 0 22px 70px rgba(94, 32, 55, 0.18);
+}
+
+* {
+    box-sizing: border-box;
+}
+
+body {
+    min-height: 100vh;
+    margin: 0;
+    display: grid;
+    place-items: center;
+    overflow-x: hidden;
+    color: var(--ink);
+    font-family: Georgia, "Times New Roman", serif;
+    background:
+        radial-gradient(circle at 14% 18%, rgba(255, 178, 63, 0.35), transparent 26rem),
+        radial-gradient(circle at 84% 10%, rgba(120, 214, 177, 0.28), transparent 22rem),
+        linear-gradient(135deg, #fff7ec 0%, #ffd8e8 48%, #dff5ec 100%);
+}
+
+button,
+input,
+select {
+    font: inherit;
+}
+
+.date-app {
+    width: min(1080px, calc(100vw - 28px));
+    min-height: min(760px, calc(100vh - 28px));
+    position: relative;
+    display: grid;
+    place-items: center;
+    padding: clamp(22px, 4vw, 52px);
+}
+
+.panel {
+    width: min(860px, 100%);
+    display: none;
+    text-align: center;
+    animation: panelIn 520ms cubic-bezier(.22, 1, .36, 1) both;
+}
+
+.panel.active {
+    display: block;
+}
+
+.tiny-note {
+    margin: 0 0 14px;
+    color: var(--rose-dark);
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-size: 0.76rem;
+    font-weight: 800;
+    letter-spacing: 0.16em;
+    text-transform: uppercase;
+}
+
+h1,
+h2 {
+    margin: 0 auto;
+    max-width: 780px;
+    line-height: 0.95;
+    letter-spacing: 0;
+}
+
+h1 {
+    font-size: clamp(3.1rem, 9vw, 7.6rem);
+}
+
+h2 {
+    font-size: clamp(2.4rem, 7vw, 5.1rem);
+}
+
+.subtitle {
+    max-width: 580px;
+    margin: 22px auto 0;
+    color: var(--muted);
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-size: clamp(1rem, 2.4vw, 1.25rem);
+    line-height: 1.5;
+}
+
+.cat-orbit {
+    height: 88px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: clamp(18px, 6vw, 78px);
+    color: var(--rose);
+    font-size: clamp(1.7rem, 5vw, 4rem);
+}
+
+.cat-orbit span:nth-child(2) {
+    color: var(--marigold);
+    transform: translateY(-16px);
+}
+
+.button-stage {
+    position: relative;
+    min-height: 170px;
+    margin: 34px auto 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 18px;
+}
+
+.choice,
+.primary {
+    border: 0;
+    cursor: pointer;
+    color: #fffaf3;
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-weight: 900;
+    letter-spacing: 0;
+    box-shadow: var(--shadow);
+    transition: transform 220ms ease, background 220ms ease, box-shadow 220ms ease;
+}
+
+.choice {
+    min-width: 132px;
+    min-height: 62px;
+    border-radius: 999px;
+    padding: 16px 28px;
+    font-size: 1.28rem;
+}
+
+.choice:hover,
+.primary:hover,
+.option-card:hover {
+    transform: translateY(-3px);
+}
+
+.choice.yes,
+.primary {
+    background: linear-gradient(135deg, var(--rose), var(--rose-dark));
+}
+
+.choice.no {
+    background: linear-gradient(135deg, #5d6f91, #26324e);
+}
+
+.choice.no.is-running {
+    position: absolute;
+    z-index: 2;
+}
+
+.attempts,
+.form-note {
+    min-height: 24px;
+    margin: 10px 0 0;
+    color: var(--rose-dark);
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-weight: 800;
+}
+
+.cat-face {
+    position: relative;
+    width: min(270px, 68vw);
+    aspect-ratio: 1;
+    margin: 0 auto 28px;
+    border-radius: 48% 48% 42% 42%;
+    background: #f5a55d;
+    box-shadow: inset -24px -20px 0 rgba(100, 41, 19, 0.11), var(--shadow);
+}
+
+.ear {
+    position: absolute;
+    top: -12%;
+    width: 34%;
+    height: 36%;
+    background: #f5a55d;
+    clip-path: polygon(50% 0, 100% 100%, 0 100%);
+}
+
+.ear.left {
+    left: 8%;
+    transform: rotate(-24deg);
+}
+
+.ear.right {
+    right: 8%;
+    transform: rotate(24deg);
+}
+
+.eye {
+    position: absolute;
+    top: 42%;
+    width: 16%;
+    height: 20%;
+    border-radius: 50%;
+    background: var(--ink);
+}
+
+.eye.left {
+    left: 29%;
+}
+
+.eye.right {
+    right: 29%;
+}
+
+.happy .eye {
+    height: 9%;
+    background: transparent;
+    border-bottom: 8px solid var(--ink);
+}
+
+.mouth {
+    position: absolute;
+    left: 50%;
+    top: 62%;
+    width: 58px;
+    height: 34px;
+    transform: translateX(-50%);
+}
+
+.happy .mouth::before,
+.happy .mouth::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    width: 34px;
+    height: 26px;
+    border-bottom: 7px solid var(--ink);
+    border-radius: 50%;
+}
+
+.happy .mouth::before {
+    left: 0;
+}
+
+.happy .mouth::after {
+    right: 0;
+}
+
+.sad .mouth {
+    border-top: 8px solid var(--ink);
+    border-radius: 50%;
+}
+
+.tear {
+    position: absolute;
+    top: 58%;
+    right: 28%;
+    width: 16px;
+    height: 30px;
+    border-radius: 50% 50% 55% 55%;
+    background: var(--sky);
+}
+
+.whisker {
+    position: absolute;
+    width: 58px;
+    height: 4px;
+    border-radius: 99px;
+    background: rgba(48, 25, 35, 0.48);
+}
+
+.w1 { left: 9%; top: 58%; transform: rotate(10deg); }
+.w2 { left: 8%; top: 66%; transform: rotate(-8deg); }
+.w3 { right: 9%; top: 58%; transform: rotate(-10deg); }
+.w4 { right: 8%; top: 66%; transform: rotate(8deg); }
+
+.field {
+    width: min(420px, 100%);
+    margin: 34px auto 0;
+    display: grid;
+    gap: 10px;
+    text-align: left;
+    color: var(--rose-dark);
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-weight: 900;
+}
+
+.field input,
+.field select {
+    width: 100%;
+    min-height: 60px;
+    border: 3px solid rgba(168, 23, 73, 0.18);
+    border-radius: 18px;
+    padding: 0 18px;
+    color: var(--ink);
+    background: rgba(255, 250, 243, 0.78);
+    box-shadow: 0 14px 40px rgba(94, 32, 55, 0.1);
+}
+
+.field input:focus,
+.field select:focus,
+.choice:focus-visible,
+.primary:focus-visible,
+.option-card:focus-visible {
+    outline: 4px solid rgba(255, 178, 63, 0.58);
+    outline-offset: 4px;
+}
+
+.primary {
+    min-height: 62px;
+    margin-top: 24px;
+    border-radius: 18px;
+    padding: 0 28px;
+    font-size: 1.05rem;
+}
+
+.date-options {
+    display: grid;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+    gap: clamp(12px, 2vw, 20px);
+    margin: 34px auto 0;
+}
+
+.option-card {
+    min-height: 268px;
+    overflow: hidden;
+    position: relative;
+    border: 4px solid transparent;
+    border-radius: 8px;
+    padding: 0;
+    cursor: pointer;
+    background: #fffaf3;
+    box-shadow: var(--shadow);
+    transition: transform 220ms ease, border-color 220ms ease, box-shadow 220ms ease;
+}
+
+.option-card img {
+    width: 100%;
+    height: 100%;
+    min-height: 268px;
+    display: block;
+    object-fit: cover;
+}
+
+.option-card span {
+    position: absolute;
+    left: 12px;
+    right: 12px;
+    bottom: 12px;
+    padding: 12px 14px;
+    border-radius: 8px;
+    color: #fffaf3;
+    background: rgba(48, 25, 35, 0.78);
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+    font-size: clamp(0.92rem, 2.2vw, 1.08rem);
+    font-weight: 900;
+}
+
+.option-card.selected {
+    border-color: var(--marigold);
+    box-shadow: 0 22px 70px rgba(168, 23, 73, 0.3);
+}
+
+.ticket {
+    width: min(390px, 100%);
+    margin: 0 auto 28px;
+    padding: 28px;
+    border: 2px dashed var(--rose-dark);
+    border-radius: 8px;
+    background: rgba(255, 250, 243, 0.78);
+    box-shadow: var(--shadow);
+    font-family: "Trebuchet MS", Verdana, sans-serif;
+}
+
+.ticket p,
+.ticket span {
+    margin: 0;
+    color: var(--muted);
+    font-weight: 800;
+}
+
+.ticket strong {
+    display: block;
+    margin: 8px 0;
+    color: var(--rose-dark);
+    font-size: clamp(2.6rem, 9vw, 4.5rem);
+    line-height: 1;
+    letter-spacing: 0.08em;
+}
+
+@keyframes panelIn {
+    from {
+        opacity: 0;
+        transform: translateY(18px) scale(0.98);
+    }
+    to {
+        opacity: 1;
+        transform: translateY(0) scale(1);
+    }
+}
+
+@media (max-width: 760px) {
+    .date-app {
+        min-height: 100vh;
+        padding-block: 36px;
+    }
+
+    .button-stage {
+        min-height: 210px;
+        flex-direction: column;
+    }
+
+    .date-options {
+        grid-template-columns: 1fr;
+    }
+
+    .option-card,
+    .option-card img {
+        min-height: 190px;
+    }
+}
+
+@media (prefers-reduced-motion: reduce) {
+    *,
+    *::before,
+    *::after {
+        animation-duration: 1ms !important;
+        scroll-behavior: auto !important;
+        transition-duration: 1ms !important;
+    }
+}

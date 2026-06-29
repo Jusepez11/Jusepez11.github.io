@@ -1,0 +1,112 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Cami, date?</title>
+    <link rel="icon" href="../logo.ico">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main class="date-app" aria-live="polite">
+        <section class="panel intro-panel active" data-panel="ask">
+            <p class="tiny-note">for Cami only</p>
+            <div class="cat-orbit" aria-hidden="true">
+                <span>♡</span>
+                <span>✦</span>
+                <span>♡</span>
+            </div>
+            <h1>Cami, would you go on a second date with me?</h1>
+            <p class="subtitle">One tiny question. Two very serious buttons.</p>
+
+            <div class="button-stage" id="buttonStage">
+                <button class="choice yes" id="yesButton" type="button">Yes</button>
+                <button class="choice no" id="noButton" type="button">No</button>
+            </div>
+
+            <p class="attempts" id="attemptText"></p>
+        </section>
+
+        <section class="panel sad-panel" data-panel="sad">
+            <div class="cat-face sad" role="img" aria-label="Sad cat face">
+                <span class="ear left"></span>
+                <span class="ear right"></span>
+                <span class="eye left"></span>
+                <span class="eye right"></span>
+                <span class="tear"></span>
+                <span class="mouth"></span>
+            </div>
+            <h2>Okay... I will respect it.</h2>
+            <p class="subtitle">The cat is devastated, but still polite.</p>
+        </section>
+
+        <section class="panel yes-panel" data-panel="calendar">
+            <div class="happy-wrap">
+                <div class="cat-face happy" role="img" aria-label="Happy cat face">
+                    <span class="ear left"></span>
+                    <span class="ear right"></span>
+                    <span class="eye left"></span>
+                    <span class="eye right"></span>
+                    <span class="mouth"></span>
+                    <span class="whisker w1"></span>
+                    <span class="whisker w2"></span>
+                    <span class="whisker w3"></span>
+                    <span class="whisker w4"></span>
+                </div>
+            </div>
+            <h2>Purrfect. Pick a day.</h2>
+            <label class="field">
+                <span>Date</span>
+                <input id="dateInput" type="date" required>
+            </label>
+            <button class="primary" id="continueButton" type="button">Continue</button>
+        </section>
+
+        <section class="panel plan-panel" data-panel="plan">
+            <p class="tiny-note">choose the plan</p>
+            <h2>What kind of date?</h2>
+
+            <div class="date-options" role="radiogroup" aria-label="Date location">
+                <button class="option-card" type="button" data-location="Movie theater">
+                    <img src="https://images.unsplash.com/photo-1489599849927-2ee91cede3ba?auto=format&fit=crop&w=900&q=80" alt="Movie theater seats and screen">
+                    <span>Movie theater</span>
+                </button>
+                <button class="option-card" type="button" data-location="Beach">
+                    <img src="https://images.unsplash.com/photo-1507525428034-b723cf961d3e?auto=format&fit=crop&w=900&q=80" alt="Sunny beach with blue water">
+                    <span>Beach</span>
+                </button>
+                <button class="option-card" type="button" data-location="Puerto Santa Ana">
+                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Puerto_Santa_Ana.JPG" alt="Puerto Santa Ana in Guayaquil, Ecuador">
+                    <span>Puerto Santa Ana</span>
+                </button>
+            </div>
+
+            <label class="field">
+                <span>Time</span>
+                <select id="timeInput" required>
+                    <option value="">Select one</option>
+                    <option value="Mañana">Mañana</option>
+                    <option value="Dia">Dia</option>
+                    <option value="Atardecer">Atardecer</option>
+                    <option value="Noche">Noche</option>
+                </select>
+            </label>
+
+            <button class="primary" id="submitButton" type="button">Submit date plan</button>
+            <p class="form-note" id="formNote"></p>
+        </section>
+
+        <section class="panel confirm-panel" data-panel="confirm">
+            <div class="ticket">
+                <p>Date request sent</p>
+                <strong id="confirmationCode">000000</strong>
+                <span>Confirmation code</span>
+            </div>
+            <h2>It is officially a plan.</h2>
+            <p class="subtitle" id="summaryText"></p>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
